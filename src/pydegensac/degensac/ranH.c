@@ -179,7 +179,7 @@ Score ransacH (double *u, int len, double th, double conf, int max_sam,
 	inliers_sym = (int *) malloc(len * sizeof(int));
 
 	no_sam = 0;
-	seed = rand();
+	seed = 13;
 
 	/* main RANSAC loop */
 	while(no_sam < max_sam) {
@@ -191,7 +191,7 @@ Score ransacH (double *u, int len, double th, double conf, int max_sam,
 		/* random minimal sample */
 		multirsampleT(Z, 9, 2, pool, 4, len, M); /* nullspace function expects M row-wise, thus 'T' */
 
-		seed = rand();
+		seed = 13;
 
 		/* orientation check */
 		if (!all_Hori_valid (u, samidx)) {

@@ -315,7 +315,7 @@ int exp_ransacF(double *u, int len, double th, double conf, int max_sam,
     f1 = sol;
     f2 = sol+9;
 
-    seed = rand();
+    seed = 13;
 
     /*  srand(RAND_SEED++); */
     while(no_sam < max_sam) {
@@ -326,7 +326,7 @@ int exp_ransacF(double *u, int len, double th, double conf, int max_sam,
         rsampleT(Z, 9, pool, 7, len, A);
         loadSample(u, samidx, 7, 6, u7);
 
-        seed = rand();
+        seed = 13;
         ////printf("Seed: %d\n",seed);
 
 
@@ -836,7 +836,7 @@ int exp_ransacFcustom(double *u, int len, double th, double conf, int max_sam,
     int a; //Mishkin, counter;
     double SymCheck_th =  CHECK_COEF*th;
 
-    srand(time(NULL)); //Mishkin - randomization
+    srand(13); //Mishkin - randomization
 
 #ifdef USE_QR
     double A[7*9], sol[2*9];
@@ -888,7 +888,7 @@ int exp_ransacFcustom(double *u, int len, double th, double conf, int max_sam,
     f1 = sol;
     f2 = sol+9;
 
-    seed = rand();
+    seed = 13;
 
     /*  srand(RAND_SEED++); */
     while(no_sam < max_sam) {
@@ -899,7 +899,7 @@ int exp_ransacFcustom(double *u, int len, double th, double conf, int max_sam,
         rsampleT(Z, 9, pool, 7, len, A);
         loadSample(u, samidx, 7, 6, u7);
 
-        seed = rand();
+        seed = 13;
         ////printf("Seed: %d\n",seed);
 
 
@@ -1274,7 +1274,7 @@ int exp_ransacFcustomLAF(double *u, double *u_1, double *u_2,int len, double th,
     double *err_laf;
     int a;
 
-    srand(time(NULL)); //Mishkin - randomization
+    srand(13); //Mishkin - randomization
 
 #ifdef USE_QR
     double A[7*9], sol[2*9];

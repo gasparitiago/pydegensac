@@ -65,7 +65,7 @@ Score ransacH2el (double *u10, int len, double th, double conf, int max_sam,
 	inliers = (int *) malloc(len * sizeof(int));
 
 	no_sam = 0;
-	seed = rand();
+	seed = 13;
 
 	/* main RANSAC loop */
 	while(no_sam < max_sam) {
@@ -77,7 +77,7 @@ Score ransacH2el (double *u10, int len, double th, double conf, int max_sam,
 		/* random minimal sample */
 		randsubset(pool, len, 2);
 		
-		seed = rand();
+		seed = 13;
 
 		/* model */
 		getTransf(u10 + 10*samidx[0], N1, D1);

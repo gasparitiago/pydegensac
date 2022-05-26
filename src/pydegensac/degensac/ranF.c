@@ -163,7 +163,7 @@ Score ransacF (double *u, int len, double th, double conf, int max_sam,
 	inliers = (int *) malloc(len * sizeof(int));
 
 	no_sam = 0;
-	seed = rand();
+	seed = 13;
 
 	/* main RANSAC loop */
 	while(no_sam < max_sam) {
@@ -175,7 +175,7 @@ Score ransacF (double *u, int len, double th, double conf, int max_sam,
 		/* random minimal sample */
 		rsampleT(Z, 9, pool, 7, len, A);
 
-		seed = rand();
+		seed = 13;
 
 		/* use LU */
 		for (i = 7*9; i < 9*9; ++i) { /* Fill with zeros to square */
